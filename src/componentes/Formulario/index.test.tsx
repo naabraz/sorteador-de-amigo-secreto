@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Formulario from './Formulario';
+import Formulario from './index';
 
 test('quando o input está vazio, novos participantes não podem ser adicionados', () => {
   render(<Formulario />);
