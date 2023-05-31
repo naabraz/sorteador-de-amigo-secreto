@@ -2,15 +2,39 @@ import styled from 'styled-components';
 
 const HeaderComponent = styled.header`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #4B69FD;
+  justify-content: space-around;
+  padding-top: 120px;
+
+  @media screen and (max-width: 800px) {
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const Logo = styled.div`
+  background-image: url('/logo.png');
+  width: 351px;
+  height: 117px;
+
+  @media screen and (max-width: 800px) {
+    background-image: url('/logo-pequeno.png');
+    width: 235px;
+    height: 199px;
+  }
+`;
+
+const Participant = styled.div`
+  background-image: url('/participante.png');
+  z-index: 1;
+  width: 450px;
+  height: 277px;
 `;
 
 const Header = () => (
   <HeaderComponent>
-    <img src='/logo-pequeno.png' alt='logo' width={235} />
-    <img src='/participante.png' alt='logo' width={450} />
+    <Logo role='img' aria-label='Logo do Sorteador' />
+    <Participant />
   </HeaderComponent>
 );
 
