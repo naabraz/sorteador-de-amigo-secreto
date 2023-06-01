@@ -31,7 +31,7 @@ const App = () => (
       <GlobalStyle />
       <Header />
       <Routes>
-        <Route path='/' element={Formulario} />
+        <Route path='/' element={<Formulario />} />
       </Routes>
     </RecoilRoot>
   </BrowserRouter>
