@@ -2,26 +2,49 @@
 
 exports[`a pagina de configuracao deve ser renderizada corretamente 1`] = `
 <div>
-  <form>
-    <input
-      placeholder="Insira os nomes dos participantes"
-      type="text"
-      value=""
-    />
-    <button
-      disabled=""
-    >
-      Adicionar
-    </button>
-    
-  </form>
-  <ul />
-  <footer>
-    <button
-      disabled=""
-    >
-      Iniciar brincadeira!
-    </button>
-  </footer>
+  <div
+    class="sc-aXZVg gkGrxw"
+  >
+    <section>
+      <h2>
+        Vamos começar!
+      </h2>
+      <form>
+        <div
+          class="sc-gEvEer licGmS"
+        >
+          <input
+            class="sc-eqUAAy dmnmPG"
+            placeholder="Insira os nomes dos participantes"
+            type="text"
+            value=""
+          />
+          <button
+            class="sc-fqkvVR bLmKnU"
+            disabled=""
+          >
+            Adicionar
+          </button>
+        </div>
+        
+      </form>
+      <ul />
+      <footer
+        class="sc-iGgWBj boAfkX"
+      >
+        <button
+          class="sc-gsFSXq gwVNFu"
+          disabled=""
+        >
+          Iniciar brincadeira!
+        </button>
+        <img
+          alt="Sacolas de compras"
+          class="sc-kAyceB Trwga"
+          src="/sacolas.png"
+        />
+      </footer>
+    </section>
+  </div>
 </div>
 `;

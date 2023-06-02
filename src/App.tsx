@@ -3,7 +3,7 @@ import { RecoilRoot } from 'recoil';
 import { createGlobalStyle } from 'styled-components';
 
 import Header from './componentes/Header';
-import Formulario from './componentes/Formulario';
+import Configuracao from './paginas/Configuracao';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -23,6 +23,25 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     min-height: 100vh;
   }
+
+  section {
+    width: 100%;
+    text-align: center;
+    max-width: 900px;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 36px;
+    color: #4B69FD;
+  }
+
+  ul li {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 8px 0;
+  }
 `;
 
 const App = () => (
@@ -31,7 +50,7 @@ const App = () => (
       <GlobalStyle />
       <Header />
       <Routes>
-        <Route path='/' element={<Formulario />} />
+        <Route path='/' element={<Configuracao />} />
       </Routes>
     </RecoilRoot>
   </BrowserRouter>

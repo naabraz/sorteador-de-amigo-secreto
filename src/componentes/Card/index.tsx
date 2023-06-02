@@ -1,17 +1,11 @@
-import styled from 'styled-components';
+import { CardComponent } from './styles';
 
-const CardComponent = styled.div`
-  background: #fff9eb;
-  border: 2px solid #000000;
-  box-sizing: border-box;
-  border-radius: 64px 64px 0px 0px;
-  padding: 80px;
-  display: flex;
-  flex: 1;
-  margin-top: -32px;
-  justify-content: center;
-`;
+type Props = {
+  children: JSX.Element;
+};
 
-const Card = () => <CardComponent />;
+const Card = ({ children }: Props) => {
+  return <CardComponent>{children}</CardComponent>;
+};
 
 export default Card;
