@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useListaDeParticipantes } from '../../state/hooks/useListaDeParticipantes';
 import { useResultadoSorteio } from '../../state/hooks/useResultadoSorteio';
-
+import Card from '../../componentes/Card';
 import {
   SelectParticipante,
   BotaoSortear,
@@ -28,30 +28,32 @@ const Sorteio = () => {
   };
 
   return (
-    <section>
-      <form onSubmit={sortear}>
-        <h2>Quem vai tirar o papelzinho?</h2>
-        <SelectParticipante
-          required
-          name='participanteDaVez'
-          id='participanteDaVez'
-          placeholder='Selecione o seu nome'
-          value={participanteDaVez}
-          onChange={(evento) => setParticipanteDaVez(evento.target.value)}
-        >
-          <option>Selecione seu nome</option>
-          {participantes.map((participante) => (
-            <option key={participante}>{participante}</option>
-          ))}
-        </SelectParticipante>
-        <Texto>Clique em sortear para ver quem é seu amigo secreto!</Texto>
-        <BotaoSortear>Sortear</BotaoSortear>
-      </form>
-      {amigoSecreto && <Resultado role='alert'>{amigoSecreto}</Resultado>}
-      <FooterSorteio className='sorteio'>
-        <img src='/aviao.png' alt='Um desenho de um avião de papel' />
-      </FooterSorteio>
-    </section>
+    <Card>
+      <section>
+        <form onSubmit={sortear}>
+          <h2>Quem vai tirar o papelzinho?</h2>
+          <SelectParticipante
+            required
+            name='participanteDaVez'
+            id='participanteDaVez'
+            placeholder='Selecione o seu nome'
+            value={participanteDaVez}
+            onChange={(evento) => setParticipanteDaVez(evento.target.value)}
+          >
+            <option>Selecione seu nome</option>
+            {participantes.map((participante) => (
+              <option key={participante}>{participante}</option>
+            ))}
+          </SelectParticipante>
+          <Texto>Clique em sortear para ver quem é seu amigo secreto!</Texto>
+          <BotaoSortear>Sortear</BotaoSortear>
+        </form>
+        {amigoSecreto && <Resultado role='alert'>{amigoSecreto}</Resultado>}
+        <FooterSorteio className='sorteio'>
+          <img src='/aviao.png' alt='Um desenho de um avião de papel' />
+        </FooterSorteio>
+      </section>
+    </Card>
   );
 };
 
