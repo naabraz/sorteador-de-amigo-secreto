@@ -3,6 +3,14 @@ import { useState } from 'react';
 import { useListaDeParticipantes } from '../../state/hooks/useListaDeParticipantes';
 import { useResultadoSorteio } from '../../state/hooks/useResultadoSorteio';
 
+import {
+  SelectParticipante,
+  BotaoSortear,
+  Texto,
+  Resultado,
+  FooterSorteio,
+} from './styles';
+
 const Sorteio = () => {
   const participantes = useListaDeParticipantes();
 
@@ -22,7 +30,8 @@ const Sorteio = () => {
   return (
     <section>
       <form onSubmit={sortear}>
-        <select
+        <h2>Quem vai tirar o papelzinho?</h2>
+        <SelectParticipante
           required
           name='participanteDaVez'
           id='participanteDaVez'
@@ -33,10 +42,14 @@ const Sorteio = () => {
           {participantes.map((participante) => (
             <option key={participante}>{participante}</option>
           ))}
-        </select>
-        <button>Sortear</button>
+        </SelectParticipante>
+        <Texto>Clique em sortear para ver quem é seu amigo secreto!</Texto>
+        <BotaoSortear>Sortear</BotaoSortear>
       </form>
-      {amigoSecreto && <p role='alert'>{amigoSecreto}</p>}
+      {amigoSecreto && <Resultado role='alert'>{amigoSecreto}</Resultado>}
+      <FooterSorteio className='sorteio'>
+        <img src='/aviao.png' alt='Um desenho de um avião de papel' />
+      </FooterSorteio>
     </section>
   );
 };

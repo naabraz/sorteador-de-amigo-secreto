@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import Header from './componentes/Header';
 import Configuracao from './paginas/Configuracao';
+import Sorteio from './paginas/Sorteio';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -51,6 +52,7 @@ const App = () => (
       <Header />
       <Routes>
         <Route path='/' element={<Configuracao />} />
+        <Route path='/sorteio' element={<Sorteio />} />
       </Routes>
     </RecoilRoot>
   </BrowserRouter>
